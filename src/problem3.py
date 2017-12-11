@@ -30,7 +30,7 @@ import rosegraphics as rg
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_problem3a()
+    # run_test_problem3a()
     run_test_problem3b()
 
 
@@ -233,10 +233,12 @@ def problem3b(m, point1):
     """
     window = rg.RoseWindow(400, 650, 'title')
     total = 0
-    for k in range(m):
-        point = point1
-        point.y = point1.y + (60 * k)
-        total += problem3a(window, point, 3 + (2 * k))
+    x = point1.x
+    y = point1.y
+    for p in range(m):
+        y += 60
+        point2 = rg.Point(x, y)
+        total += problem3a(window, point2, 3 + (2 * p))
     window.close_on_mouse_click()
     return total
     # ------------------------------------------------------------------
